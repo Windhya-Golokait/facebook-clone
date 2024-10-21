@@ -125,7 +125,7 @@ function MainArea(){
                     </div>
                     <div className="Posted">
                         <div className="poster">
-                            <div className="Simplilearn">
+                            <div className="fb-post">
                                 <img src="/images/cool.jpg" alt="Img" style={{height:"50px", width:"50px", borderRadius:"50%"}}/>
                                 Mr. CooL 
                                 <div className="update"> Updated his cover image.</div>
