@@ -1,328 +1,361 @@
-html {
-    font-size: 1rem;
-    box-sizing: border-box;
-    margin-right: 0px;
-}
+/* Reset and Base Styles */
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
+
+html {
+    font-size: 62.5%;
+}
+
 body {
-    font: 1.6rem helvetica;
+    font-family: Helvetica, Arial, sans-serif;
     background-color: #f0f2f5;
-    margin-right: 0;
-}
-.HomePage {
-    display: grid;
-}
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 4.5rem;
-    border: 0.1rem solid black;
-    margin-right: 20px;
-}
-.first-header {
-    display: flex;
-}
-.Search {
-    display: flex;
-    align-items: center;
-    background-color: #f0f2f5;
-    border-radius: 1rem;
-    height: 2.8rem;
-    padding: 0 20px;
-    margin: 28px 7px;
-}
-input[type=Search] {
-    width: 100%;
-    padding: 12px 27px;
-    margin: 8px 0;
-    align-items: center;
-    background-color: #f0f2f5;
-    border: none;
-    outline: none;
-}
-input::placeholder {
-    font-size: 1rem;
-}
-.middle-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1%;
-    margin-left: 0;
-}
-.Icon {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 0 50px;
-}
-.third-header {
-    display: flex;
-    align-items: center;
-}
-.Plus {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 0 50px;
-    border-radius: 50%;
-    height: 2.7rem;
-    background-color: #f0f2f5;
-}
-.Pluss {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    font-size: 1.2rem;
-    padding: 0 10px;
-    font-weight: 500;
-    border-radius: 50%;
-    height: 3rem;
-    margin-right: 20px;
-}
-.Pluss > div {
-    padding-left: 10px;
-}
-.Pluss > img {
-    border-radius: 50%;
-    max-width: 40%;
-}
-.logo {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 0 50px;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
 }
 
 /* Main Layout */
 .Main {
     display: flex;
     justify-content: space-between;
-    padding: 2rem 5%;
+    padding: 2rem 3%;
+    gap: 2rem;
+    max-width: 1920px;
+    margin: 0 auto;
+    min-height: calc(100vh - 60px);
 }
+
+/* Sidebar Styling */
 .Rside, .Lside {
-    height: 100vh;
-    width: 22%;
-    padding: 1rem;
+    flex: 0 0 360px;
+    height: calc(100vh - 6rem);
+    padding: 1.2rem;
     background-color: #fff;
-    border-radius: 0.5rem;
+    border-radius: 0.8rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
 }
+
+/* Left Sidebar Profile */
 .Profile {
     display: flex;
     align-items: center;
-    font-size: 1.8rem;
-    font-weight: 500;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
 }
-.Profile > img {
+
+.Profile:hover {
+    background-color: #f0f2f5;
+}
+
+.Profile img {
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    width: 50px;
+    margin-right: 1rem;
 }
+
+/* Sidebar Menu Items */
 .Pro {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    padding: 0.8rem;
+    margin: 0.2rem 0;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.Pro:hover {
+    background-color: #f0f2f5;
+}
+
+.Pro div {
+    margin-left: 1rem;
     font-size: 1.5rem;
-    font-weight: 500;
-    padding: 1.2rem 1rem;
+    color: #050505;
 }
-.Pro > div {
-    margin: 10px;
+
+/* Main Content Area */
+.MainArea {
+    flex: 1;
+    max-width: 680px;
+    margin: 0 auto;
 }
-.Pros {
+
+/* Stories Section */
+.addStory {
     display: flex;
-    align-items: center;
-    font-size: 1.8rem;
-    font-weight: 500;
-    padding: 0 15px;
-    border-bottom: 0.1rem solid rgb(68, 62, 62);
+    gap: 1rem;
+    width: 100%;
+    height: 200px;
+    margin: 0 0 1.6rem 0;
+    padding: 0 0.4rem;
 }
-.Profiles {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 5px;
+
+.Story {
+    flex: 1;
+    min-width: 120px;
+    max-width: 140px;
+    height: 100%;
+    border-radius: 1rem;
+    background-color: #242526;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
-.Profiles > img {
-    border-radius: 50%;
+
+.Story:hover {
+    transform: scale(1.02);
+}
+
+.Story img {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
     width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 4px solid #2e89ff;
 }
-.Pross {
+
+.Story div {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+/* Post Creation Area */
+.message {
+    background-color: white;
+    border-radius: 0.8rem;
+    padding: 1.2rem;
+    margin-bottom: 1.6rem;
+    width: 100%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.Post {
     display: flex;
     align-items: center;
-    font-weight: 500;
+    gap: 1rem;
+    padding: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.Post img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+input[type="Mind"] {
+    flex: 1;
+    height: 4rem;
+    padding: 0 1.6rem;
+    border: none;
+    background-color: #f0f2f5;
+    border-radius: 2rem;
     font-size: 1.5rem;
-    padding: 0 15px;
+    cursor: pointer;
+}
+
+input[type="Mind"]::placeholder {
+    color: #65676b;
+}
+
+/* Action Buttons */
+.Call {
+    border-top: 1px solid #e4e6eb;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+.ico {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.icone {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    flex: 1;
+    justify-content: center;
+}
+
+.icone:hover {
+    background-color: #f0f2f5;
+}
+
+.icone div {
+    font-size: 1.4rem;
+    color: #65676b;
+    font-weight: 500;
+}
+
+/* Posted Content */
+.Posted {
+    background-color: white;
+    border-radius: 0.8rem;
+    padding: 1.2rem;
+    margin-bottom: 1.6rem;
+    width: 100%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.poster {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem;
+}
+
+.fb-post {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.fb-post img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.update {
+    font-size: 1.4rem;
+    color: #65676b;
+}
+
+.caption {
+    padding: 1.2rem 0;
+    font-size: 1.5rem;
+}
+
+.FacebookImg {
+    margin: 1rem 0;
+}
+
+.FacebookImg img {
+    width: 100%;
+    border-radius: 0.8rem;
+}
+
+/* Comment Section */
+.Comment {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.8rem 0;
+    border-top: 1px solid #e4e6eb;
+    margin-top: 0.4rem;
+}
+
+.Like {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.6rem 2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.Like:hover {
+    background-color: #f0f2f5;
 }
 
 /* Contact Section */
 .Contact {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-}
-.Contacts {
-    font-size: 1.6rem;
-    font-weight: 500;
-    padding-left: 1rem;
-}
-.icons {
-    display: flex;
     align-items: center;
-    padding: 2px 20px;
+    padding: 1rem;
+    border-bottom: 1px solid #e4e6eb;
+    margin-bottom: 1rem;
 }
+
+.Contacts {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
 .chaticon {
     display: flex;
+    gap: 1rem;
 }
+
+.icons {
+    padding: 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.icons:hover {
+    background-color: #f0f2f5;
+}
+
+/* Contact List */
 .Profilee {
     display: flex;
     align-items: center;
-    font-size: 1.7rem;
-    font-weight: 500;
-}
-.Profilee  img {
-    border-radius: 50%;
-    width: 45px;
-    object-fit: cover;
-    height: 100%;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-/* Main Area */
-.MainArea {
-    display: grid;
-    width: 60%;
-    height: 30rem;
-    justify-content: center;
-}
-.addStory {
-    display: flex;
-    width: 95%;
-    margin: 20px 0;
-    color: white;
-    font-size: 1.5rem;
-    height: 20rem;
-    justify-content: flex-start;
-    margin-left: 2%;
-}
-.Story {
-    width: 170px;
-    margin: 0 10px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 20rem;
-    border-radius: 0.5rem;
-    background-color: black;
-}
-.message {
-    display: grid;
-    height: 25rem;
-    width: 120%;
-    margin-left:2%;
-}
-.Post {
-    margin-top: 5%;
-    display: flex;
-    width: 80%;
-    justify-content: flex-start;
-    background-color: white;
-    margin-left: 0;
-}
-.Post > div {
-    margin-left: 2px;
-}
-.Post > img {
-    height: 45px;
-    border-radius: 50%;
-    width: 45px;
-    margin: 15px;
-    padding-top: 9px;
-}
-input[type="Mind"] {
-    width: 50%;
-    margin: 15px 0;
-    height: 4rem;
-    display: inline;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    margin-left: 0;
-    box-sizing: border-box;
-}
-.Call {
-    display: flex;
-    align-items: center;
-    margin-left: 0;
-    height: 5rem;
-    width: 80%;
-    background-color: white;
+.Profilee:hover {
+    background-color: #f0f2f5;
 }
 
-.ico {
-    display: flex;
-    align-items: center;
-    margin-left: 5%;
+.Profilee img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 1rem;
 }
-.icone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 50px;
-    font-size: 1rem;
+
+/* Responsive Design */
+@media (max-width: 1260px) {
+    .Rside, .Lside {
+        flex: 0 0 280px;
+    }
 }
-.Posted {
-    display: grid;
-    height: auto;
-    width: 80%;
-    align-items: flex-start;
-    background-color: white;
-    margin-left: 0;
-    margin-top: 29px;
+
+@media (max-width: 960px) {
+    .Rside {
+        display: none;
+    }
+    
+    .MainArea {
+        margin-left: 0;
+    }
 }
-.poster {
-    display: flex;
-    justify-content: space-between;
-}
-.fb-post {
-    display: flex;
-    justify-content: space-between;
-    margin: 25px;
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-.update {
-    font-size: 1.4rem;
-    font-weight: 400;
-    padding-left: 20px;
-}
-.edit {
-    margin: 12px;
-}
-.caption {
-    font-size: 1.3rem;
-    font-weight: 500;
-    word-wrap: break-word;
-    padding-left: 4%;
-}
-.Comment {
-    display: flex;
-    justify-content: space-around;
-    height: 5rem;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.Like {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    font-weight: 400;
-    font-size: 1.5rem;
+
+@media (max-width: 768px) {
+    .Lside {
+        display: none;
+    }
+    
+    .MainArea {
+        margin: 0 auto;
+    }
 }
