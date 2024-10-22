@@ -20,7 +20,7 @@ function LoginPage() {
                     <br/>
                     <input type="password" placeholder="Password"/>
                     <br/>
-                    <Link to="/HeaderArea">
+                    <Link to="/Home">
                         <button className="btn">Log in</button>
                     </Link>
                     <div className="forget">
